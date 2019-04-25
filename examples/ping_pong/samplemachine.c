@@ -52,17 +52,17 @@ void tickEventHandler()
 
 
 
-STATE_BEGIN(StPong)
+STATE_BEGIN(StPong, NO_STATE())
 ADD_TRIGGER(TrEnter, NO_STATE(), enterPong)
 ADD_TRIGGER(TrTick, STATE(StPing), tickEventHandler)
 STATE_END(0)
 
-STATE_BEGIN(StPing)
+STATE_BEGIN(StPing, NO_STATE())
 ADD_TRIGGER(TrEnter, NO_STATE(), enterPing)
 ADD_TRIGGER(TrTick, STATE(StPong), tickEventHandler)
 STATE_END(0)
 
-STATE_BEGIN(StInitial)
+STATE_BEGIN(StInitial, NO_STATE())
 ADD_TRIGGER(TrTick, STATE(StPing), NO_ACTION())
 STATE_END(0)
 
